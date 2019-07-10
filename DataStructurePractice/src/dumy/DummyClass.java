@@ -1,0 +1,7 @@
+package dumy;
+
+public class DummyClass {
+	public static void main(String[] args) {
+
+	}
+}
