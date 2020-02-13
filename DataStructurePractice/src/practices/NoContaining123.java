@@ -15,13 +15,19 @@ package practices;
 	        while(hs.size()<4200){
 	            for(int k= i; k<j; k++){
 	                int num = l.get(k);
+//	                System.out.println("num="+num);
+//	                System.out.println("hs.size()="+hs.size());
 	                hs.add(num);
-	                l.add(num*10+1);l.add(num*10+2);l.add(num*10+3);
+	                l.add(num*10+1);
+	                l.add(num*10+2);
+	                l.add(num*10+3);
 	            }
+	           
 	            i = j;
 	            j = i + (int)Math.pow(3,count);
 	            count++;
 	        }
+	        System.out.println(l);
 	    }
 		public static void main (String[] args)throws IOException {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
