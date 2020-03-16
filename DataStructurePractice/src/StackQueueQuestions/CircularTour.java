@@ -67,7 +67,7 @@ class GfG
 	    	    end=i-1;
 	    	}
 	    	
-	    while(petrolcurrent>0 && start!=end ){
+	    while(petrolcurrent>=0 && start!=end ){
 	        start=(start+1)%petrol.length;
 	        petrolcurrent+=petrol[start]-distance[start];
 //	        System.out.println("petrolcurrent="+petrolcurrent);
@@ -77,9 +77,10 @@ class GfG
      flag= -1;
 //     break;
      }
-     if(start==end){
+     if(start==end && petrolcurrent>0){
      flag= i;
-//     break;
+     break;
+//     return flag;
      }
 	}
 
