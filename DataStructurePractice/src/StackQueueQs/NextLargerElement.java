@@ -1,4 +1,4 @@
-package StackQueueQuestions;
+package StackQueueQs;
 //new comment added
 import java.lang.*;
 import java.util.HashMap;

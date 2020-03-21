@@ -1,4 +1,4 @@
-package StackQueueQuestions;
+package StackQueueQs;
 class Node
 {
     int key, value;

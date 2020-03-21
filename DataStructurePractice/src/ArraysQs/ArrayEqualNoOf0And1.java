@@ -1,4 +1,4 @@
-package practices;
+package ArraysQs;
 
 import java.io.BufferedReader;
 import java.io.IOException;

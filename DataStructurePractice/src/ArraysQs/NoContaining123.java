@@ -1,4 +1,4 @@
-package practices;
+package ArraysQs;
 
 	import java.util.*;
 	import java.lang.*;

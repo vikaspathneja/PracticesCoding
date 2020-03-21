@@ -1,4 +1,4 @@
-package LinkListRelationQuestions;
+package LinkListQs;
 
 public class Node {
 	public int data;

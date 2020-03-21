@@ -1,6 +1,6 @@
-package ArraysQs;
+package TreesQs;
 
-public class StarSuperStarElement {
+public class BinaryTree {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -1,4 +1,4 @@
-package StackQueueQuestions;
+package StackQueueQs;
 //{ Driver Code Starts
 import java.util.*;
 

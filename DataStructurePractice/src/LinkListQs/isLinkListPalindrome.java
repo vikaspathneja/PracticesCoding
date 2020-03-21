@@ -1,4 +1,4 @@
-package LinkListRelationQuestions;
+package LinkListQs;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package StackQueueQuestions;
+package StackQueueQs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
