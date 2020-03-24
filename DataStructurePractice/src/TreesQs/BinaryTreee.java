@@ -1,6 +1,6 @@
 package TreesQs;
 
-public class BinaryTree {
+public class BinaryTreee {
 	static Node root;
 
 	public static void main(String[] args) {
