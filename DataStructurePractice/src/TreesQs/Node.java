@@ -5,6 +5,10 @@ public class Node {
 	
 	public Node left;
 	public Node right;
+	/**
+	 * @see property to go to right Node at Same Level in Tree
+	 */
+	public Node nextRight;
 	
 	public Node(int data) {
 		this.data=data;
