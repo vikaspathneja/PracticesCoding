@@ -3,17 +3,17 @@ package TreesQs;
 import java.io.*;
 import java.util.*;
 
-class Nodeiii {
-	int data;
-	Node left;
-	Node right;
-
-	Nodeiii(int data) {
-		this.data = data;
-		left = null;
-		right = null;
-	}
-}
+//class Node {
+//	int data;
+//	Node left;
+//	Node right;
+//
+//	Node(int data) {
+//		this.data = data;
+//		left = null;
+//		right = null;
+//	}
+//}
 
 public class VerticalViewOfTree {
 
@@ -102,63 +102,88 @@ public class VerticalViewOfTree {
 //} Driver Code Ends
 //User function Template for Java
 
-/*
- * class Node { int data; Node left, right;
- * 
- * Node(int key) { data = key; left = right = null; } }
- */
+
+class NodeM{
+	Node node;
+	int distance;
+	public NodeM(Node node,int distance) {
+		this.node=node;
+		this.distance=distance;
+	}
+}
 
 class BinaryTreeI {
-	static HashMap<Integer, List<Integer>> hm = new HashMap();
-	static int minlevel=0;
-	static int maxlevel=0;
-	
+	static int mindistance = 0;
+	static int maxdistance = 0;
+	static HashMap<Integer, ArrayList<Integer>> hm ;
+
 	public static void verticalOrder(Node root) {
-		// add your code here
-		StringBuffer sb=new StringBuffer();
-		ArrayList<Integer>al=new ArrayList<Integer>();
-		al.add(root.data);
-		hm.put(0,al);
-		verticalView(root, 0);
-		for(int i=minlevel; i<=maxlevel; i++) {
-			List<Integer> s=hm.get(i);
-			Iterator itr=s.listIterator();
-			while(itr.hasNext()) {
-				int num=(Integer)itr.next();
-				sb.append(num+" ");
+		mindistance = 0;
+		maxdistance = 0;
+		hm=new HashMap<>();
+		Queue<NodeM> q = new LinkedList<NodeM>();
+		NodeM node=new NodeM(root,0);
+		q.add(node);
+		q.add(null);
+		verticalView(q);
+//		System.out.println(mindistance);
+//		System.out.println(maxdistance);
+		
+		for (int i = mindistance; i <= maxdistance; i++) {
+			ArrayList<Integer> s = hm.get(i);
+//			System.out.println("list size=="+s.size());
+			Iterator<Integer> itr = s.iterator();
+			StringBuffer sb = new StringBuffer();
+			while (itr.hasNext()) {
+				int num = (Integer) itr.next();
+				sb.append(num + " ");
 			}
+			System.out.print(sb);
+			
 		}
-		System.out.print(sb.toString());
+		
+		
+	q=null;
+	
 	}
 
-	private static void verticalView(Node root, int level) {
-		if (root == null)
-			return;
-		else {
-			if (root.left != null) {
-				int newlevel =level-1;
-				minlevel=newlevel<minlevel?newlevel:minlevel;
-				if(hm.containsKey(newlevel))
-				hm.get(newlevel).add(root.left.data);
-				else {
-					ArrayList<Integer> al=new ArrayList<> ();
-					al.add(root.left.data);
-					hm.put(newlevel,al);
+	private static void verticalView(Queue<NodeM> q) {
+		
+		if (!q.isEmpty() && q.size() > 1) {
+			NodeM nodem = q.poll();
+		
+			if (nodem == null && q.size() > 0) {
+				q.add(null);
+			} else {
+				int distance=nodem.distance;
+				Node node=nodem.node;
+				
+//				int distance = node.distance;
+				mindistance = distance < mindistance ? distance : mindistance;
+				maxdistance = distance > maxdistance ? distance : maxdistance;
+
+				ArrayList<Integer> al = null;
+				if (hm.containsKey(distance))
+					al = hm.get(distance);
+				else
+				al = new ArrayList<Integer>();
+				al.add(node.data);
+				hm.put(distance, al);
+
+				if (node.left != null) {
+					NodeM newnode=new NodeM(node.left,distance-1);
+					q.add(newnode);
 				}
-				verticalView(root.left, newlevel);
-			}
-			if (root.right != null) {
-				int newlevel =level+1;
-				maxlevel=newlevel>maxlevel?newlevel:maxlevel;
-				if(hm.containsKey(newlevel))
-				hm.get(newlevel).add(root.right.data);
-				else {
-					ArrayList<Integer> al=new ArrayList<>();
-					al.add(root.right.data);
-					hm.put(newlevel,al);
+
+				if (node.right != null) {
+					NodeM newnode=new NodeM(node.right,distance+1);
+					q.add(newnode);
 				}
-				verticalView(root.right, newlevel);
+
 			}
+			verticalView(q);
+		} else {
+			q.poll();
 		}
 	}
 

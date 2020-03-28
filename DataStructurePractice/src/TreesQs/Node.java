@@ -10,9 +10,15 @@ public class Node {
 	 */
 	public Node nextRight;
 	
+	/**
+	 * 
+	 * @param integer data
+	 */
 	public Node(int data) {
 		this.data=data;
 		
 	}
+
+
 	
 }
