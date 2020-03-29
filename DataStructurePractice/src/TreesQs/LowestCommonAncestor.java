@@ -102,7 +102,7 @@ class LowestCommonAncestor {
 			int x, y;
 			x = Integer.parseInt(arr[0]);
 			y = Integer.parseInt(arr[1]);
-			System.out.println(g.LCA(root, x, y).data);
+			System.out.println(g.LCABetter(root, x, y).data);
 			t--;
 
 		}
@@ -163,4 +163,15 @@ class BST {
 		
 	}
 
+	Node LCABetter(Node node, int n1, int n2) {
+	if(node.data>n1 && node.data>n2)
+	return LCABetter(node.left, n1, n2);
+	
+	if(node.data<n1 && node.data<n2)
+	return LCABetter(node.right, n1, n2);
+	
+	return node;
+	}
+	
+	
 }
