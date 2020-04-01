@@ -132,6 +132,11 @@ class Node{
 /* Should return true if trees with roots as root1 and 
 root2 are identical */
 
+/** 
+ * 
+ * @author vikas
+ *
+ */
 class TreeInternal
 {
 	boolean isIdentical(Node root1, Node root2)
