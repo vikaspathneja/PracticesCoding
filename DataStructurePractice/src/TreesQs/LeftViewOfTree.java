@@ -108,28 +108,28 @@ class Node
      left = right = null;
  }
 }*/
-class Tree
-{
-	int maxlevel=1;
- void leftView(Node root)
- {
-	 if(root!=null) {
-	 System.out.print(root.data+" ");
-	 leftViewOfTree(root,1);
-	 }
- }
- public void leftViewOfTree(Node node,int level){
-	 
-	 if(node==null)
-		 return ;
-	 else {
-		 if(level>maxlevel) {
-			 System.out.print(node.data+" ");
-			 maxlevel=level;
-		 }
-	 leftViewOfTree(node.left,level+1);
-	 leftViewOfTree(node.right,level+1);
-	 }
- }
- 
-}
+//class Tree
+//{
+//	int maxlevel=1;
+// void leftView(Node root)
+// {
+//	 if(root!=null) {
+//	 System.out.print(root.data+" ");
+//	 leftViewOfTree(root,1);
+//	 }
+// }
+// public void leftViewOfTree(Node node,int level){
+//	 
+//	 if(node==null)
+//		 return ;
+//	 else {
+//		 if(level>maxlevel) {
+//			 System.out.print(node.data+" ");
+//			 maxlevel=level;
+//		 }
+//	 leftViewOfTree(node.left,level+1);
+//	 leftViewOfTree(node.right,level+1);
+//	 }
+// }
+// 
+//}

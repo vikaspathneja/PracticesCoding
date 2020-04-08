@@ -98,7 +98,7 @@ class HeightBalaceTree {
 	        while(t > 0){
 	            String s = br.readLine();
  	    	Node root = buildTree(s);
- 	    	TreeHeightBalance g = new TreeHeightBalance();
+ 	    	Tree g = new Tree();
 			
 			    if(g.isBalanced(root) == true)
  			    System.out.println(1);
@@ -128,30 +128,30 @@ class Node
 	}
 } */
 
-class TreeHeightBalance
-{
-  boolean isBalanced(Node root)
- {
-	  if(root==null)
-		  return true;
-	    
-	  int lth=height(root.left);
-	  int rth=height(root.right);
-	  
-	  
-	  return (Math.abs(lth-rth)<=1) && isBalanced(root.left) && isBalanced(root.right);
-	  
- }
-  
-  int height(Node root) {
-	  if(root==null)
-		  return 0;
-	  
-	  return 1+Math.max(height(root.left),height(root.right));
-  }
-  
-
- 
-}
+//class TreeHeightBalance
+//{
+//  boolean isBalanced(Node root)
+// {
+//	  if(root==null)
+//		  return true;
+//	    
+//	  int lth=height(root.left);
+//	  int rth=height(root.right);
+//	  
+//	  
+//	  return (Math.abs(lth-rth)<=1) && isBalanced(root.left) && isBalanced(root.right);
+//	  
+// }
+//  
+//  int height(Node root) {
+//	  if(root==null)
+//		  return 0;
+//	  
+//	  return 1+Math.max(height(root.left),height(root.right));
+//  }
+//  
+//
+// 
+//}
 
 

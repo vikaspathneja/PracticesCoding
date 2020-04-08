@@ -101,9 +101,9 @@ class TwoTreesAreIdentical {
  	    	String s2 = br.readLine();
  	    	Node root1 = buildTree(s1);
  	    	Node root2 = buildTree(s2);
-             TreeInternal g = new TreeInternal();
+             Tree g = new Tree();
          //System.out.println(g.isIdentical(root,roott));
-			    boolean b = g.isIdentical(root1,root2);
+			    boolean b = g.isTwoTreeIdentical(root1,root2);
 			    if(b==true)
 				    System.out.println("Yes");
 			    else
@@ -137,41 +137,41 @@ root2 are identical */
  * @author vikas
  *
  */
-class TreeInternal
-{
-	boolean isIdentical(Node root1, Node root2)
-	{
-		if(root1==null && root2==null)
-			return true;
-		
-		if(root1!=null && root2!=null) 
-		return (root1.data==root2.data) && isIdentical(root1.left, root2.left) && isIdentical(root1.right, root2.right);
-				
-		return false;
-	}
-	
-	boolean isIdenticalOld(Node root1, Node root2)
-	{
-		if(root1==null && root2==null)
-			return true;
-		
-		if(root1!=null && root2==null)
-			return false;
-		
-		if(root2!=null && root1==null)
-			return false;
-		
-		if(root1.data!=root2.data)
-			return false;
-		
-		if(root1.left!=null || root2.left!=null)
-		return isIdentical(root1.left, root2.left);	
-		
-		if(root1.right!=null || root2.right!=null)
-		return isIdentical(root1.right, root2.right);	
-		
-		return true;
-	}
-		
-	
-}
+//class TreeInternal
+//{
+//	boolean isIdentical(Node root1, Node root2)
+//	{
+//		if(root1==null && root2==null)
+//			return true;
+//		
+//		if(root1!=null && root2!=null) 
+//		return (root1.data==root2.data) && isIdentical(root1.left, root2.left) && isIdentical(root1.right, root2.right);
+//				
+//		return false;
+//	}
+//	
+//	boolean isIdenticalOld(Node root1, Node root2)
+//	{
+//		if(root1==null && root2==null)
+//			return true;
+//		
+//		if(root1!=null && root2==null)
+//			return false;
+//		
+//		if(root2!=null && root1==null)
+//			return false;
+//		
+//		if(root1.data!=root2.data)
+//			return false;
+//		
+//		if(root1.left!=null || root2.left!=null)
+//		return isIdentical(root1.left, root2.left);	
+//		
+//		if(root1.right!=null || root2.right!=null)
+//		return isIdentical(root1.right, root2.right);	
+//		
+//		return true;
+//	}
+//		
+//	
+//}

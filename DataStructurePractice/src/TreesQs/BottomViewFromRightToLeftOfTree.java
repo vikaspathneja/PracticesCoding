@@ -92,7 +92,7 @@ public class BottomViewFromRightToLeftOfTree {
 		while (t-- > 0) {
 			String s = br.readLine();
 			Node root = buildTree(s);
-			BinaryTreeBottom obj = new BinaryTreeBottom();
+			Tree obj = new Tree();
 			obj.verticalOrder(root);
 			System.out.println();
 
@@ -112,82 +112,82 @@ class NodeBottom{
 	}
 }
 
-class BinaryTreeBottom {
-	static int mindistance = 0;
-	static int maxdistance = 0;
-	static HashMap<Integer, ArrayList<Integer>> hm ;
-
-	public static void verticalOrder(Node root) {
-		mindistance = 0;
-		maxdistance = 0;
-		hm=new HashMap<>();
-		Queue<NodeBottom> q = new LinkedList<NodeBottom>();
-		NodeBottom node=new NodeBottom(root,0);
-		q.add(node);
-		q.add(null);
-		verticalView(q);
-//		System.out.println(mindistance);
-//		System.out.println(maxdistance);
-		
-		for (int i = mindistance; i <= maxdistance; i++) {
-			ArrayList<Integer> s = hm.get(i);
-			if(s.size()>0)
-			System.out.print(s.get(s.size()-1)+" ");
-//			System.out.println("list size=="+s.size());
-//			Iterator<Integer> itr = s.iterator();
-//			StringBuffer sb = new StringBuffer();
-//			while (itr.hasNext()) {
-//				int num = (Integer) itr.next();
-//				sb.append(num + " ");
-//			}
-//			System.out.print(sb);
+//class BinaryTreeBottom {
+//	static int mindistance = 0;
+//	static int maxdistance = 0;
+//	static HashMap<Integer, ArrayList<Integer>> hm ;
+//
+//	public static void verticalOrder(Node root) {
+//		mindistance = 0;
+//		maxdistance = 0;
+//		hm=new HashMap<>();
+//		Queue<NodeBottom> q = new LinkedList<NodeBottom>();
+//		NodeBottom node=new NodeBottom(root,0);
+//		q.add(node);
+//		q.add(null);
+//		verticalView(q);
+////		System.out.println(mindistance);
+////		System.out.println(maxdistance);
+//		
+//		for (int i = mindistance; i <= maxdistance; i++) {
+//			ArrayList<Integer> s = hm.get(i);
+//			if(s.size()>0)
+//			System.out.print(s.get(s.size()-1)+" ");
+////			System.out.println("list size=="+s.size());
+////			Iterator<Integer> itr = s.iterator();
+////			StringBuffer sb = new StringBuffer();
+////			while (itr.hasNext()) {
+////				int num = (Integer) itr.next();
+////				sb.append(num + " ");
+////			}
+////			System.out.print(sb);
+////			
 //			
-			
-		}
-		
-		
-	q=null;
-	
-	}
-
-	private static void verticalView(Queue<NodeBottom> q) {
-		
-		if (!q.isEmpty() && q.size() > 1) {
-			NodeBottom nodem = q.poll();
-		
-			if (nodem == null && q.size() > 0) {
-				q.add(null);
-			} else {
-				int distance=nodem.distance;
-				Node node=nodem.node;
-				
-//				int distance = node.distance;
-				mindistance = distance < mindistance ? distance : mindistance;
-				maxdistance = distance > maxdistance ? distance : maxdistance;
-
-				ArrayList<Integer> al = null;
-				if (hm.containsKey(distance))
-					al = hm.get(distance);
-				else
-				al = new ArrayList<Integer>();
-				al.add(node.data);
-				hm.put(distance, al);
-
-				if (node.left != null) {
-					NodeBottom newnode=new NodeBottom(node.left,distance-1);
-					q.add(newnode);
-				}
-
-				if (node.right != null) {
-					NodeBottom newnode=new NodeBottom(node.right,distance+1);
-					q.add(newnode);
-				}
-
-			}
-			verticalView(q);
-		} else {
-			q.poll();
-		}
-	}
-
-}
+//		}
+//		
+//		
+//	q=null;
+//	
+//	}
+//
+//	private static void verticalView(Queue<NodeBottom> q) {
+//		
+//		if (!q.isEmpty() && q.size() > 1) {
+//			NodeBottom nodem = q.poll();
+//		
+//			if (nodem == null && q.size() > 0) {
+//				q.add(null);
+//			} else {
+//				int distance=nodem.distance;
+//				Node node=nodem.node;
+//				
+////				int distance = node.distance;
+//				mindistance = distance < mindistance ? distance : mindistance;
+//				maxdistance = distance > maxdistance ? distance : maxdistance;
+//
+//				ArrayList<Integer> al = null;
+//				if (hm.containsKey(distance))
+//					al = hm.get(distance);
+//				else
+//				al = new ArrayList<Integer>();
+//				al.add(node.data);
+//				hm.put(distance, al);
+//
+//				if (node.left != null) {
+//					NodeBottom newnode=new NodeBottom(node.left,distance-1);
+//					q.add(newnode);
+//				}
+//
+//				if (node.right != null) {
+//					NodeBottom newnode=new NodeBottom(node.right,distance+1);
+//					q.add(newnode);
+//				}
+//
+//			}
+//			verticalView(q);
+//		} else {
+//			q.poll();
+//		}
+//	}
+//
+//}

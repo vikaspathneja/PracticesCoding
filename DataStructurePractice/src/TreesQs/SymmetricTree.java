@@ -98,7 +98,7 @@ class SymmetricTree {
 			String s = br.readLine();
 			Node root = buildTree(s);
 
-			InnerC g = new InnerC();
+			Tree g = new Tree();
 			if (g.isSymmetric(root) == true)
 				System.out.println("True");
 			else
@@ -118,25 +118,25 @@ class SymmetricTree {
  */
 //complete this function
 //return true/false if the is Symmetric or not
-class InnerC {
-	public static boolean isSymmetric(Node root) {
-		if(root==null)
-			return true;
-		
-		if(root.left==null || root.right==null)
-			return false;
-
-		return isIdentical(root.left, root.right);
-	}
-
-	static boolean isIdentical(Node root1, Node root2) {
-		if (root1 == null && root2 == null)
-			return true;
-
-		if (root1 != null && root2 != null)
-			return (root1.data == root2.data) && isIdentical(root1.left, root2.right)
-					&& isIdentical(root1.right, root2.left);
-
-		return false;
-	}
-}
+//class InnerC {
+//	public static boolean isSymmetric(Node root) {
+//		if(root==null)
+//			return true;
+//		
+//		if(root.left==null || root.right==null)
+//			return false;
+//
+//		return isIdentical(root.left, root.right);
+//	}
+//
+//	static boolean isIdentical(Node root1, Node root2) {
+//		if (root1 == null && root2 == null)
+//			return true;
+//
+//		if (root1 != null && root2 != null)
+//			return (root1.data == root2.data) && isIdentical(root1.left, root2.right)
+//					&& isIdentical(root1.right, root2.left);
+//
+//		return false;
+//	}
+//}

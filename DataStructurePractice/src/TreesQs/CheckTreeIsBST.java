@@ -82,7 +82,7 @@ class CheckTreeIsBST {
 		while (t > 0) {
 			String s = br.readLine();
 			Node root = buildTree(s);
-			InnerTree g = new InnerTree();
+			Tree g = new Tree();
 			if (g.isBST(root))
 				System.out.println(1);
 			else
@@ -94,31 +94,31 @@ class CheckTreeIsBST {
 
 }
 
-class InnerTree {
-	boolean isBST(Node root) {
-//		return isTreeBST(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
-		return isTreeBSTBetter(root,null,null);
-	}
-	boolean isTreeBST(Node root,int min,int max) {
-		if(root==null)
-			return true;
-		if(root.data<min || root.data>max)
-			return false;
-			
-		return isTreeBST(root.left,min,root.data-1) && isTreeBST(root.right, root.data+1, max);
-	}
-	boolean isTreeBSTBetter(Node root,Node left ,Node right) {
-		if(root==null)
-			return true;
-		
-		if(left!=null && root.data<left.data )
-			return false;
-			
-		if(right!=null && root.data>right.data)
-			return false;
-		
-		return isTreeBSTBetter(root.left,left,root) && isTreeBSTBetter(root.right, root, right);
-	}
-	
-	
-}
+//class InnerTree {
+//	boolean isBST(Node root) {
+////		return isTreeBST(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+//		return isTreeBSTBetter(root,null,null);
+//	}
+//	boolean isTreeBST(Node root,int min,int max) {
+//		if(root==null)
+//			return true;
+//		if(root.data<min || root.data>max)
+//			return false;
+//			
+//		return isTreeBST(root.left,min,root.data-1) && isTreeBST(root.right, root.data+1, max);
+//	}
+//	boolean isTreeBSTBetter(Node root,Node left ,Node right) {
+//		if(root==null)
+//			return true;
+//		
+//		if(left!=null && root.data<left.data )
+//			return false;
+//			
+//		if(right!=null && root.data>right.data)
+//			return false;
+//		
+//		return isTreeBSTBetter(root.left,left,root) && isTreeBSTBetter(root.right, root, right);
+//	}
+//	
+//	
+//}

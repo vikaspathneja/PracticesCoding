@@ -111,9 +111,9 @@ public class ConvertBinaryTreeIntoDLL {
 		while (t > 0) {
 			String s = br.readLine();
 			Node root = buildTree(s);
-			GfG g = new GfG();
+			Tree g = new Tree();
 
-			Node ans = g.bToDLL(root);
+			Node ans = g.binaryTreeToDoubleLinkedList(root);
 			printList(ans);
 			t--;
 			System.out.println();
@@ -135,32 +135,32 @@ public class ConvertBinaryTreeIntoDLL {
 //This function should convert a given Binary tree to Doubly
 //Linked List
 
-class GfG {
-	Node head;
-	static Node prev;
-	
-	Node bToDLL(Node root) {
-		prev=null;
-		binaryToDll(root);
-		return head;
-	}
-	
-	void binaryToDll(Node root){
-		if(root==null)
-			return ;
-
-		binaryToDll(root.left);
-//		System.out.println(root.data);
-		if(prev==null) {
-		head=root;
-		}else {
-			root.left=prev;
-			prev.right=root;
-		}
-		prev=root;
-		
-		binaryToDll(root.right);
-
-	}
-	
-}
+//class GfG {
+//	Node head;
+//	static Node prev;
+//	
+//	Node bToDLL(Node root) {
+//		prev=null;
+//		binaryToDll(root);
+//		return head;
+//	}
+//	
+//	void binaryToDll(Node root){
+//		if(root==null)
+//			return ;
+//
+//		binaryToDll(root.left);
+////		System.out.println(root.data);
+//		if(prev==null) {
+//		head=root;
+//		}else {
+//			root.left=prev;
+//			prev.right=root;
+//		}
+//		prev=root;
+//		
+//		binaryToDll(root.right);
+//
+//	}
+//	
+//}

@@ -92,8 +92,8 @@ public class VerticalViewOfTree {
 		while (t-- > 0) {
 			String s = br.readLine();
 			Node root = buildTree(s);
-			BinaryTreeI obj = new BinaryTreeI();
-			obj.verticalOrder(root);
+			Tree obj = new Tree();
+			obj.verticalOrderFromLefttoRightWithOrderTraversal(root);
 			System.out.println();
 
 		}
@@ -112,79 +112,79 @@ class NodeM{
 	}
 }
 
-class BinaryTreeI {
-	static int mindistance = 0;
-	static int maxdistance = 0;
-	static HashMap<Integer, ArrayList<Integer>> hm ;
-
-	public static void verticalOrder(Node root) {
-		mindistance = 0;
-		maxdistance = 0;
-		hm=new HashMap<>();
-		Queue<NodeM> q = new LinkedList<NodeM>();
-		NodeM node=new NodeM(root,0);
-		q.add(node);
-		q.add(null);
-		verticalView(q);
-//		System.out.println(mindistance);
-//		System.out.println(maxdistance);
-		
-		for (int i = mindistance; i <= maxdistance; i++) {
-			ArrayList<Integer> s = hm.get(i);
-//			System.out.println("list size=="+s.size());
-			Iterator<Integer> itr = s.iterator();
-			StringBuffer sb = new StringBuffer();
-			while (itr.hasNext()) {
-				int num = (Integer) itr.next();
-				sb.append(num + " ");
-			}
-			System.out.print(sb);
-			
-		}
-		
-		
-	q=null;
-	
-	}
-
-	private static void verticalView(Queue<NodeM> q) {
-		
-		if (!q.isEmpty() && q.size() > 1) {
-			NodeM nodem = q.poll();
-		
-			if (nodem == null && q.size() > 0) {
-				q.add(null);
-			} else {
-				int distance=nodem.distance;
-				Node node=nodem.node;
-				
-//				int distance = node.distance;
-				mindistance = distance < mindistance ? distance : mindistance;
-				maxdistance = distance > maxdistance ? distance : maxdistance;
-
-				ArrayList<Integer> al = null;
-				if (hm.containsKey(distance))
-					al = hm.get(distance);
-				else
-				al = new ArrayList<Integer>();
-				al.add(node.data);
-				hm.put(distance, al);
-
-				if (node.left != null) {
-					NodeM newnode=new NodeM(node.left,distance-1);
-					q.add(newnode);
-				}
-
-				if (node.right != null) {
-					NodeM newnode=new NodeM(node.right,distance+1);
-					q.add(newnode);
-				}
-
-			}
-			verticalView(q);
-		} else {
-			q.poll();
-		}
-	}
-
-}
+//class BinaryTreeI {
+//	static int mindistance = 0;
+//	static int maxdistance = 0;
+//	static HashMap<Integer, ArrayList<Integer>> hm ;
+//
+//	public static void verticalOrderFromLefttoRightWithOrderTraversal(Node root) {
+//		mindistance = 0;
+//		maxdistance = 0;
+//		hm=new HashMap<>();
+//		Queue<NodeM> q = new LinkedList<NodeM>();
+//		NodeM node=new NodeM(root,0);
+//		q.add(node);
+//		q.add(null);
+//		verticalViewFromLefttoRightWithOrderTraversal(q);
+////		System.out.println(mindistance);
+////		System.out.println(maxdistance);
+//		
+//		for (int i = mindistance; i <= maxdistance; i++) {
+//			ArrayList<Integer> s = hm.get(i);
+////			System.out.println("list size=="+s.size());
+//			Iterator<Integer> itr = s.iterator();
+//			StringBuffer sb = new StringBuffer();
+//			while (itr.hasNext()) {
+//				int num = (Integer) itr.next();
+//				sb.append(num + " ");
+//			}
+//			System.out.print(sb);
+//			
+//		}
+//		
+//		
+//	q=null;
+//	
+//	}
+//
+//	private static void verticalViewFromLefttoRightWithOrderTraversal(Queue<NodeM> q) {
+//		
+//		if (!q.isEmpty() && q.size() > 1) {
+//			NodeM nodem = q.poll();
+//		
+//			if (nodem == null && q.size() > 0) {
+//				q.add(null);
+//			} else {
+//				int distance=nodem.distance;
+//				Node node=nodem.node;
+//				
+////				int distance = node.distance;
+//				mindistance = distance < mindistance ? distance : mindistance;
+//				maxdistance = distance > maxdistance ? distance : maxdistance;
+//
+//				ArrayList<Integer> al = null;
+//				if (hm.containsKey(distance))
+//					al = hm.get(distance);
+//				else
+//				al = new ArrayList<Integer>();
+//				al.add(node.data);
+//				hm.put(distance, al);
+//
+//				if (node.left != null) {
+//					NodeM newnode=new NodeM(node.left,distance-1);
+//					q.add(newnode);
+//				}
+//
+//				if (node.right != null) {
+//					NodeM newnode=new NodeM(node.right,distance+1);
+//					q.add(newnode);
+//				}
+//
+//			}
+//			verticalViewFromLefttoRightWithOrderTraversal(q);
+//		} else {
+//			q.poll();
+//		}
+//	}
+//
+//}

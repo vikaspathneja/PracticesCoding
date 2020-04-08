@@ -107,8 +107,8 @@ class ConnectNodesAtSameLevel {
 	        while(t > 0){
 	            String s = br.readLine();
  	    	Node root = buildTree(s);
-     	    TreeInner g = new TreeInner();
-			    g.connect(root);
+     	    Tree g = new Tree();
+			    g.connectNodesatSameLvl(root);
              printSpecial(root);
              System.out.println();
              printInorder(root);
@@ -123,59 +123,59 @@ class ConnectNodesAtSameLevel {
 //} Driver Code Ends
 //User function Template for Java
 
-class TreeInner
-{
- public static void connect(Node p)
-     {
-        Deque<Node> dq = new LinkedList<Node>();
-		ArrayList<Node>al=new ArrayList<Node>();
-		dq.add(p);
-		dq.add(null);
-		connectNodesAtSameLevel(p, 0, dq,al);
-     }
-
-/**
- * 
- * @param root pass root Node to connect all nodes at a same level
- * @param level pass level for recursively travelling in a tree
- * @param dq double ended queue to traverse
- * @param al arraylist to track elements of a same level
- * @see this method is to connect all nodes of a same level with the help of nextRight Property of Node Class to next node in same level
- * @author vikas 
- */
-static	void connectNodesAtSameLevel(Node root, int level, Deque<Node> dq,ArrayList<Node>al) {
-//		StringBuffer sb = new StringBuffer();
-		
-		if (root == null)
-			return;
-
-		while (!dq.isEmpty()) {
-			Node num = dq.poll();
-			if (num == null && dq.size() > 0) {
-				dq.add(null);
-				// System.out.print(sb);
-				al.clear();
-				// sb = new StringBuffer();
-				level++;
-			} else if (num == null && dq.size() == 0) {
-				// 	System.out.print(sb);
-				// 	sb = new StringBuffer();
-					al.clear();
-				
-			} else {
-				// sb.append(num.data + " ");
-				if(al.size()>=1)
-				al.get(al.size()-1).nextRight=num;
-				al.add(num);
-				Node node = num;
-				if (node.left != null) {
-					dq.add(node.left);
-				}
-				if (node.right != null) {
-					dq.add(node.right);
-				}
-			}
-		}
-	}
-
-}
+//class TreeInner
+//{
+// public static void connect(Node p)
+//     {
+//        Deque<Node> dq = new LinkedList<Node>();
+//		ArrayList<Node>al=new ArrayList<Node>();
+//		dq.add(p);
+//		dq.add(null);
+//		connectNodesAtSameLevel(p, 0, dq,al);
+//     }
+//
+///**
+// * 
+// * @param root pass root Node to connect all nodes at a same level
+// * @param level pass level for recursively travelling in a tree
+// * @param dq double ended queue to traverse
+// * @param al arraylist to track elements of a same level
+// * @see this method is to connect all nodes of a same level with the help of nextRight Property of Node Class to next node in same level
+// * @author vikas 
+// */
+//static	void connectNodesAtSameLevel(Node root, int level, Deque<Node> dq,ArrayList<Node>al) {
+////		StringBuffer sb = new StringBuffer();
+//		
+//		if (root == null)
+//			return;
+//
+//		while (!dq.isEmpty()) {
+//			Node num = dq.poll();
+//			if (num == null && dq.size() > 0) {
+//				dq.add(null);
+//				// System.out.print(sb);
+//				al.clear();
+//				// sb = new StringBuffer();
+//				level++;
+//			} else if (num == null && dq.size() == 0) {
+//				// 	System.out.print(sb);
+//				// 	sb = new StringBuffer();
+//					al.clear();
+//				
+//			} else {
+//				// sb.append(num.data + " ");
+//				if(al.size()>=1)
+//				al.get(al.size()-1).nextRight=num;
+//				al.add(num);
+//				Node node = num;
+//				if (node.left != null) {
+//					dq.add(node.left);
+//				}
+//				if (node.right != null) {
+//					dq.add(node.right);
+//				}
+//			}
+//		}
+//	}
+//
+//}

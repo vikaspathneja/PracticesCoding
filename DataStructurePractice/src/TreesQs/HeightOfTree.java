@@ -97,8 +97,8 @@ class HeightOfTree {
 			String s = br.readLine();
 			Node root = buildTree(s);
 
-			HeightTreeInner g = new HeightTreeInner();
-			System.out.println(g.height(root));
+			Tree g = new Tree();
+			System.out.println(g.maxheight(root));
 			t--;
 
 		}
@@ -115,20 +115,20 @@ class HeightOfTree {
  * Node(int item) { data = item; left = right = null; } }
  */
 
-class HeightTreeInner {
-	static int maxHeight;
-
-	int height(Node root) {
-		return maxheight(root,maxHeight);
-	}
-	int maxheight(Node node,int height) {
-		if (node == null)
-			return height;
-		
-		int mleft=maxheight(node.left,height+1);
-		int mright=maxheight(node.right,height+1);
-		int maxh=mleft>mright?mleft:mright;
-		return maxh;
-	}
-
-}
+//class HeightTreeInner {
+//	static int maxHeight;
+//
+//	int height(Node root) {
+//		return maxheight(root,maxHeight);
+//	}
+//	int maxheight(Node node,int height) {
+//		if (node == null)
+//			return height;
+//		
+//		int mleft=maxheight(node.left,height+1);
+//		int mright=maxheight(node.right,height+1);
+//		int maxh=mleft>mright?mleft:mright;
+//		return maxh;
+//	}
+//
+//}

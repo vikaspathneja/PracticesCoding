@@ -69,7 +69,7 @@ public class CountLeafNodes {
 				m.put(n2, child);
 			}
 
-			LeafNodeCount g = new LeafNodeCount();
+			Tree g = new Tree();
 			int res = g.countLeaves(root);
 			System.out.println(res);
 			// CLN.inorder(root);
@@ -87,20 +87,20 @@ public class CountLeafNodes {
  * Node(int item) { data = item; left = right = null; } }
  */
 
-class LeafNodeCount {
-	static int count;
-	static int countLeaves(Node node) {
-		Leavescount(node);
-		return count/2;
-	}
-	static void Leavescount(Node node){
-		if(node==null) {
-			count++;
-			return;
-		}
-		Leavescount(node.left);
-		Leavescount(node.right);
-		
-	}
-	
-}
+//class LeafNodeCount {
+//	static int count;
+//	static int countLeaves(Node node) {
+//		Leavescount(node);
+//		return count/2;
+//	}
+//	static void Leavescount(Node node){
+//		if(node==null) {
+//			count++;
+//			return;
+//		}
+//		Leavescount(node.left);
+//		Leavescount(node.right);
+//		
+//	}
+//	
+//}

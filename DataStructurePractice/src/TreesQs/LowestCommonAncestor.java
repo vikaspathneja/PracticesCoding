@@ -96,13 +96,13 @@ class LowestCommonAncestor {
 		while (t > 0) {
 			String s = br.readLine();
 			Node root = buildTree(s);
-			BST g = new BST();
+			Tree g = new Tree();
 			String X = br.readLine();
 			String arr[] = X.split(" ");
 			int x, y;
 			x = Integer.parseInt(arr[0]);
 			y = Integer.parseInt(arr[1]);
-			System.out.println(g.LCABetter(root, x, y).data);
+			System.out.println(g.LowestCommonAncestor(root, x, y).data);
 			t--;
 
 		}
@@ -117,61 +117,61 @@ class LowestCommonAncestor {
  * structure of Node is as follows: class Node{ int data; Node left; Node right;
  * Node(int data){ this.data = data; left=null; right=null; } }
  */
-
-class BST {
-	Node LCA(Node node, int n1, int n2) {
-		
-		Queue<Node>q1=new  LinkedList<Node>();
-		findandBuildQForNum(n1,node,q1);
-		
-		Queue<Node>q2=new  LinkedList<Node>();
-		findandBuildQForNum(n2,node,q2);
-//		System.out.println(q1.toString());
-//		System.out.println(q2.toString());
-		
-		int q1size=q1.size();
-		int q2size=q2.size();
-		int size=q1size>q2size?q2size:q1size;
-		Node finalNode=null;
-		while(size-->0 && q1.peek().data==q2.peek().data) {
-		finalNode=q1.poll();
-		q2.poll();
-		}
-		
-		return finalNode;
-		
-//		return null;
-	}
-
-	private void findandBuildQForNum(int n1,Node root,Queue<Node>q) {
-		if(root==null)
-			return;
-		
-		if(root!=null && root.data==n1) {
-			q.add(root);
-			return ;
-		}
-		if(root!=null && n1>root.data) {
-			q.add(root);
-			findandBuildQForNum(n1,root.right,q);
-		}
-		if(root!=null && n1<root.data) {
-			q.add(root);
-			findandBuildQForNum(n1,root.left,q);
-		}
-			
-		
-	}
-
-	Node LCABetter(Node node, int n1, int n2) {
-	if(node.data>n1 && node.data>n2)
-	return LCABetter(node.left, n1, n2);
-	
-	if(node.data<n1 && node.data<n2)
-	return LCABetter(node.right, n1, n2);
-	
-	return node;
-	}
-	
-	
-}
+//
+//class BST {
+//	Node LCA(Node node, int n1, int n2) {
+//		
+//		Queue<Node>q1=new  LinkedList<Node>();
+//		findandBuildQForNum(n1,node,q1);
+//		
+//		Queue<Node>q2=new  LinkedList<Node>();
+//		findandBuildQForNum(n2,node,q2);
+////		System.out.println(q1.toString());
+////		System.out.println(q2.toString());
+//		
+//		int q1size=q1.size();
+//		int q2size=q2.size();
+//		int size=q1size>q2size?q2size:q1size;
+//		Node finalNode=null;
+//		while(size-->0 && q1.peek().data==q2.peek().data) {
+//		finalNode=q1.poll();
+//		q2.poll();
+//		}
+//		
+//		return finalNode;
+//		
+////		return null;
+//	}
+//
+//	private void findandBuildQForNum(int n1,Node root,Queue<Node>q) {
+//		if(root==null)
+//			return;
+//		
+//		if(root!=null && root.data==n1) {
+//			q.add(root);
+//			return ;
+//		}
+//		if(root!=null && n1>root.data) {
+//			q.add(root);
+//			findandBuildQForNum(n1,root.right,q);
+//		}
+//		if(root!=null && n1<root.data) {
+//			q.add(root);
+//			findandBuildQForNum(n1,root.left,q);
+//		}
+//			
+//		
+//	}
+//
+//	Node LCABetter(Node node, int n1, int n2) {
+//	if(node.data>n1 && node.data>n2)
+//	return LCABetter(node.left, n1, n2);
+//	
+//	if(node.data<n1 && node.data<n2)
+//	return LCABetter(node.right, n1, n2);
+//	
+//	return node;
+//	}
+//	
+//	
+//}

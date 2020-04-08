@@ -93,7 +93,7 @@ class SpiralTraversalOfTree {
 		while (t-- > 0) {
 			String s = br.readLine();
 			Node root = buildTree(s);
-			Spiral g = new Spiral();
+			Tree g = new Tree();
 			g.printSpiral(root);
 			System.out.println();
 
@@ -110,61 +110,61 @@ class SpiralTraversalOfTree {
  * Node(int item) { data = item; left = right = null; } }
  */
 
-class Spiral {
-	void printSpiral(Node node) {
-		Deque<Node> dq = new LinkedList<Node>();
-//		HashMap<Integer,Node>hm=new HashMap<Integer, Node>();
-		dq.add(node);
-//		hm.put(node.data, node);
-		dq.add(null);
-		spiralView(node, 0, dq);
-	}
-
-	void spiralView(Node root, int level, Deque<Node> dq) {
-		StringBuffer sb = new StringBuffer();
-
-		if (root == null)
-			return;
-
-		while (!dq.isEmpty()) {
-			Node num = dq.poll();
-			if (num == null && dq.size() > 0) {
-				dq.add(null);
-				if (level % 2 == 0) {
-					String[] inputArr = sb.toString().split(" ");
-					for (int i = inputArr.length - 1; i >= 0; i--) {
-						System.out.print(inputArr[i] + " ");
-					}
-					sb = new StringBuffer();
-				} else {
-					System.out.print(sb);
-					sb = new StringBuffer();
-				}
-				level++;
-			} else if (num == null && dq.size() == 0) {
-				if (level % 2 == 0) {
-					String[] inputArr = sb.toString().split(" ");
-					for(int i = inputArr.length - 1; i >= 0; i--) {
-						System.out.print(inputArr[i] + " ");
-					}
-					sb = new StringBuffer();
-				} else {
-					System.out.print(sb);
-					sb = new StringBuffer();
-				}
-
-				System.out.print(sb.toString());
-			} else {
-				sb.append(num.data + " ");
-				Node node = num;
-				if (node.left != null) {
-					dq.add(node.left);
-				}
-				if (node.right != null) {
-					dq.add(node.right);
-				}
+//class Spiral {
+//	void printSpiral(Node node) {
+//		Deque<Node> dq = new LinkedList<Node>();
+////		HashMap<Integer,Node>hm=new HashMap<Integer, Node>();
+//		dq.add(node);
+////		hm.put(node.data, node);
+//		dq.add(null);
+//		spiralView(node, 0, dq);
+//	}
+//
+//	void spiralView(Node root, int level, Deque<Node> dq) {
+//		StringBuffer sb = new StringBuffer();
+//
+//		if (root == null)
+//			return;
+//
+//		while (!dq.isEmpty()) {
+//			Node num = dq.poll();
+//			if (num == null && dq.size() > 0) {
 //				dq.add(null);
-			}
-		}
-	}
-}
+//				if (level % 2 == 0) {
+//					String[] inputArr = sb.toString().split(" ");
+//					for (int i = inputArr.length - 1; i >= 0; i--) {
+//						System.out.print(inputArr[i] + " ");
+//					}
+//					sb = new StringBuffer();
+//				} else {
+//					System.out.print(sb);
+//					sb = new StringBuffer();
+//				}
+//				level++;
+//			} else if (num == null && dq.size() == 0) {
+//				if (level % 2 == 0) {
+//					String[] inputArr = sb.toString().split(" ");
+//					for(int i = inputArr.length - 1; i >= 0; i--) {
+//						System.out.print(inputArr[i] + " ");
+//					}
+//					sb = new StringBuffer();
+//				} else {
+//					System.out.print(sb);
+//					sb = new StringBuffer();
+//				}
+//
+//				System.out.print(sb.toString());
+//			} else {
+//				sb.append(num.data + " ");
+//				Node node = num;
+//				if (node.left != null) {
+//					dq.add(node.left);
+//				}
+//				if (node.right != null) {
+//					dq.add(node.right);
+//				}
+////				dq.add(null);
+//			}
+//		}
+//	}
+//}
