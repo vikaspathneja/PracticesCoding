@@ -25,6 +25,33 @@ public class Tree {
 
 	private static int maxHeight;
 
+	
+	
+
+	/** 
+	 * 
+	 * @param root
+	 * @return max distance of Tree any node to any node
+	 */
+	public static int diameterofTree(Node root) {
+//		 return Math.max(maxheight(root.left)+maxheight(root.right),Math.max(diameterofTree(root.left),diameterofTree(root.right)));
+		if(root==null)
+			return 0;
+		
+		return Math.max(
+				(1+height(root.left)+height(root.right)),
+				 Math.max(
+						 diameterofTree(root.left),
+						 diameterofTree(root.right)
+						 )
+				 );
+
+	 }
+	
+	
+	
+	
+	
 	public void leftView(Node root) {
 		if (root != null) {
 			System.out.print(root.data + " ");
@@ -468,7 +495,7 @@ public class Tree {
 
 	}
 
-	private int height(Node root) {
+	public static int height(Node root) {
 		if (root == null)
 			return 0;
 
@@ -477,11 +504,12 @@ public class Tree {
 
 //	static int maxHeight;
 
-	public int maxheight(Node root) {
+	public static int maxheight(Node root) {
+		maxHeight=0;
 		return maxheight(root, maxHeight);
 	}
 
-	private int maxheight(Node node, int height) {
+	private static int maxheight(Node node, int height) {
 		if (node == null)
 			return height;
 
