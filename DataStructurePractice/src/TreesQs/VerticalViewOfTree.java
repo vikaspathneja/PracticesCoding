@@ -23,7 +23,7 @@ public class VerticalViewOfTree {
 			return null;
 		}
 
-		String ip[] = str.split(" ");
+		String[] ip = str.split(" ");
 		// Create the root of the tree
 		Node root = new Node(Integer.parseInt(ip[0]));
 		// Push the root to the queue
