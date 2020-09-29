@@ -54,9 +54,13 @@ public class Address {
 	
 
 	
-//@Override
-//protected Address clone() throws CloneNotSupportedException {
-//	return (Address)super.clone();
-//}
 	
+	@Override
+	public Object clone() {
+	    try {
+	        return (Address) super.clone();
+	    } catch (CloneNotSupportedException e) {
+	        return new Address(this.getPin(),this.getStreet());
+	    }
+	}
 }

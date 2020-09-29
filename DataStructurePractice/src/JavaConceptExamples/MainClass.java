@@ -24,8 +24,5 @@ public class MainClass {
 		System.out.println("Widening");
 	}
 	
-//	public static void ma(double I) {
-//		System.out.println("Auto UnBoxing");
-//	}
 	
 }

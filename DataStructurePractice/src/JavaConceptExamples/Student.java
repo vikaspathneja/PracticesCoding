@@ -4,8 +4,10 @@ public class Student implements Cloneable{
 	private String sname;
 	private int sno;
 	private Address addr;
-	
-	
+//	private final int num;
+	public Student() {
+		System.out.println("student constr called");
+	}
 	public Address getAddr() {
 		return addr;
 	}
@@ -14,6 +16,9 @@ public class Student implements Cloneable{
 		this.addr = addr;
 	}
 
+	
+	
+	
 	@Override
 	public int hashCode() {
 		int hashCode=sno+sname.length();
@@ -35,19 +40,21 @@ public class Student implements Cloneable{
 	
 	
 	public Student(String sname, int sno,Address addr) {
-		super();
+//		super();
 		this.sname = sname;
 		this.sno = sno;
+//		below line is a way of shallow copy
 		this.addr=addr;
+
+//		below line is a way of deep copy via copy constructor
+//		this.addr=new Address(addr.getPin(), addr.getStreet());
+		
+		
+		
 	}
 	
 	
-	public Student(String sname, int sno,int pincode,String streetaddr) {
-		super();
-		this.sname = sname;
-		this.sno = sno;
-		this.addr=new Address(pincode,streetaddr);
-	}
+
 	
 	public String getSname() {
 		return sname;
@@ -67,19 +74,17 @@ public class Student implements Cloneable{
 		return "Student [sname=" + sname + ", sno=" + sno + ", addr=" + addr + "]";
 	}
 	
-//	@Override
-//	protected Student clone() throws CloneNotSupportedException {
-//		// TODO Auto-generated method stub
-//		return (Student)super.clone();
-//	}
-//	
-//	@Override
-//	protected Student clone() throws CloneNotSupportedException {
-//		Student stu= (Student) super.clone();
-//		stu.addr=addr.clone();
-//		return stu;
-//	}
-//	
+	@Override
+	public Object clone() {
+	    Student stu = null;
+	    try {
+	        stu = (Student) super.clone();
+	    } catch (CloneNotSupportedException e) {
+	        stu = new Student(this.getSname(),this.getSno());
+	    }
+	    stu.addr= (Address) this.addr.clone();
+	    return stu;
+	}
 	
 
 }
