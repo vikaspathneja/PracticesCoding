@@ -1,6 +1,8 @@
 package JavaConceptExamples;
 
-public class Student implements Cloneable{
+import java.util.Comparator;
+
+public class Student implements Cloneable,Comparable<Student>{
 	private String sname;
 	private int sno;
 	private Address addr;
@@ -84,6 +86,12 @@ public class Student implements Cloneable{
 	    }
 	    stu.addr= (Address) this.addr.clone();
 	    return stu;
+	}
+	
+	
+	public int compareTo(Student o) {
+		return sno>o.sno?1:sno<o.sno?-1:0;
+//		return -sname.compareTo(o.sname);
 	}
 	
 
