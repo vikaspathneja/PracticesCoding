@@ -1,5 +1,21 @@
 package ArraysQs;
 
+/*
+ * Adding one to number represented as array of digits
+Last Updated: 06-08-2019
+Given a non-negative number represented as an array of digits, add 1 to the number ( increment the number represented by the digits ). The digits are stored such that the most significant digit is first element of array.
+
+Examples :
+
+Input : [1, 2, 4]
+Output : [1, 2, 5]
+
+Input : [9, 9, 9]
+Output : [1, 0, 0, 0]
+*/
+
+
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
