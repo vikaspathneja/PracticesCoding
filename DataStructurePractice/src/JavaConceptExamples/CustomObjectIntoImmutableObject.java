@@ -1,6 +1,9 @@
 package JavaConceptExamples;
 
-public  class CustomObjectIntoImmutableObject {
+//final removed for time being to remove compile error whenever testing/learning for Immutable put final keyword before class
+public  
+//final
+class CustomObjectIntoImmutableObject {
 	private final String ObjectName;
 	private final Address addr;
 	

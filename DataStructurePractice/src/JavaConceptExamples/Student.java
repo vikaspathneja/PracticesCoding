@@ -21,12 +21,12 @@ public class Student implements Cloneable,Comparable<Student>{
 	
 	
 	
-	@Override
-	public int hashCode() {
-		int hashCode=sno+sname.length();
-		System.out.println("hashCode=="+hashCode);
-		return hashCode;
-	}
+//	@Override
+//	public int hashCode() {
+//		int hashCode=sno+sname.length();
+//		System.out.println("hashCode=="+hashCode);
+//		return hashCode;
+//	}
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -35,7 +35,7 @@ public class Student implements Cloneable,Comparable<Student>{
 	}
 	
 	public Student(String sname, int sno) {
-		super();
+//		super();
 		this.sname = sname;
 		this.sno = sno;
 	}
@@ -63,6 +63,7 @@ public class Student implements Cloneable,Comparable<Student>{
 	}
 	public void setSname(String sname) {
 		this.sname = sname;
+		System.out.println("setSname=="+this.sname);
 	}
 	public int getSno() {
 		return sno;

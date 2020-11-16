@@ -7,6 +7,10 @@ import java.util.List;
 @FunctionalInterface
 interface inter {
 	int square(int no);
+
+	static void say() {
+		System.out.println("static method called");
+	}
 }
 
 
@@ -14,8 +18,17 @@ interface inter {
 
 public class LambdaExpression {
 	public static void main(String[] args) {
-		inter ref=x->x*x;
-		System.out.println("hashcode==="+ref.hashCode()+" "+ref.square(10));
+		inter ref=x->{ 
+			int value=x*x;
+			return value;
+		};
+		
+		
+;
+		
+
+		
+//		System.out.println("hashcode==="+ref.hashCode()+" "+ref.square(10));
 
 	
 		Comparator<Integer> c=(i1,i2)->i1>i2?1:i1<i2?-1:0;
