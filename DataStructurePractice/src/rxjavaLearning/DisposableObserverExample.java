@@ -11,7 +11,6 @@ import io.reactivex.observers.DisposableObserver;
 public class DisposableObserverExample {
 
 	public static void main(String[] args) {
-
 		/**
 		 * Observer is way to create Observer 
 		 */
