@@ -1,4 +1,4 @@
-package DesignPattern_factory;
+package factory_design_pattern;
 
 public class Sbi implements BankInterface {
 	@Override

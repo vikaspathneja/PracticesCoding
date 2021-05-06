@@ -1,4 +1,4 @@
-package DesignPattern_observer;
+package observer_design_pattern;
 
 public class CustObservers {
 	private String nameOfSubscriber;
