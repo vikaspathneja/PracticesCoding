@@ -5,12 +5,10 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import io.reactivex.functions.Predicate;
-
 public class StreamExample {
 	public static void main(String[] args) {
 		List<String> strings = Arrays.asList("abc", "", "bcd","abc", "efg", "abcd","", "jkl");
-		Predicate<String>chklength=s->s.length()>2;
+		java.util.function.Predicate<String>chklength=s->s.length()>2;
 		List<String>filteredList=strings.parallelStream().filter(s->{
 			
 			try {
