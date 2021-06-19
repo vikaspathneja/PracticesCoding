@@ -1,4 +1,4 @@
-package factory_design_pattern;
+package design_pattern.factory_design_pattern;
 
 public class Factory {
 	public static BankInterface getBankInstance(String bankName) throws InstantiationException, IllegalAccessException, ClassNotFoundException {

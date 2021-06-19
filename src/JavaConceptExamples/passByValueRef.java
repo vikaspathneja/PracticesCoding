@@ -1,5 +1,6 @@
 package JavaConceptExamples;
 
+
 class Dummy{
 	private String dname;
 	private int dnumber;

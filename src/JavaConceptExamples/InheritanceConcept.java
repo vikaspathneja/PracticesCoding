@@ -53,20 +53,29 @@ public class InheritanceConcept {
 		prpo.fun();//parent fun method called
 //		prpo.perimeter();  //method perimeter() is undefined. Compilation Error
 		System.out.println("x value=="+prpo.getX()); //give value of Parent x 
-System.out.println();
+		System.out.println();
 		
 //		Scenario 2 while Parent Refernce and Child Object
 		System.out.println("Scenario 2 while Parent Refernce and Child Object");
 		Parent prco=new Child();
-		prco.fun();//Child fun method called if fun method is present in child class
+		prco.fun();//Child fun method called if fun method is present in child class otherwise fun method of parent class called
 //		prco.perimeter();  //method perimeter() is undefined. Compilation Error
 		System.out.println("x value=="+prco.getX()); //give value of Parent x 
 		System.out.println();
 
 //		exception in above scenario if reference is of parent and object is of child
 //		then we can typecast to child ref and called child class method
+		System.out.println("----prco cast to child object---");
 		Child nc=(Child)prco;
+		System.out.println("---prco cast fun function called---");
+		nc.fun();
+		System.out.println("---prco cast perimeter function called---");
 		nc.perimeter();
+		System.out.println();
+		
+		Parent po=prco;
+		po.fun();
+		
 		
 		
 		
@@ -83,8 +92,10 @@ System.out.println();
 		System.out.println();
 //		Scenario 4 while Child Refernce and Parent Object		
 		System.out.println("Scenario 4 while Child Refernce and Parent Object");
-//		Child crpo=(Child)new Parent();//Type mismatch (TypeCasting Issue) 
-//		, compilation issue can be resolved by TypeCast With Child Object\
+		Child crpo=(Child)new Parent();//Type mismatch (TypeCasting Issue) 
+		crpo.fun();
+		//System.out.println(crpo.getX());
+		//		, compilation issue can be resolved by TypeCast With Child Object\
 //		but give runtime Error  ClassCastException  java.lang.ClassCastException
 		
 		
