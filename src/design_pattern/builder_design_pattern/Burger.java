@@ -1,6 +1,4 @@
-package builder_design_pattern;
-
-import factory_design_pattern.BankInterface;
+package design_pattern.builder_design_pattern;
 
 public class Burger implements Item {
 

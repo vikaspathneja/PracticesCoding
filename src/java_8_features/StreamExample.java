@@ -36,5 +36,25 @@ public class StreamExample {
 		System.out.println(summ.getAverage());
 		System.out.println(summ.getSum());
 		
+		
+		
+		//build stream
+		//reduce
+		//map
+		//flatmap
+		//collect
+		//parallel streams
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

@@ -1,4 +1,4 @@
-package builder_design_pattern;
+package design_pattern.builder_design_pattern;
 
 import java.util.ArrayList;
 import java.util.List;
