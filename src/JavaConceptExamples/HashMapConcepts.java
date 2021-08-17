@@ -11,7 +11,12 @@ public class HashMapConcepts {
 		hm.put(new Student("vikas",1),1);
 		hm.put(new Student("vikas",1),1);
 		hm.put(new Student("vikas",1),1);
+		
 		System.out.println(hm);
+		System.out.println(hm.get("vikas"));
+
+		
+		
 		/**
 		 *  Case 1: if hashcode & equals not overridden in Student Class 
 		 *  for every object of Student Class  default hashcode method implementation used which givens memory location in integeral form 

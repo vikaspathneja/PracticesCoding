@@ -3,6 +3,8 @@ package JavaConceptExamples;
 import java.util.ArrayList;
 import java.util.List;
 
+import JavaConceptExamples.immutable.CustomObjectIntoImmutableObject;
+
 public class MainClass {
 
 	public static void main(String[] args) {
