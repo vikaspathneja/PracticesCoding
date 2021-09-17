@@ -1,6 +1,5 @@
 package JavaConceptExamples;
 
-import com.sun.corba.se.impl.orbutil.GetPropertyAction;
 
 public class ChildN extends ParentN {
 
