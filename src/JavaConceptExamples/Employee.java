@@ -8,8 +8,17 @@ public class Employee {
 	private String ename;
 	private int salary;
 	private List<Subject>list;
+	private int eno;
 	
 	
+
+	public int getEno() {
+		return eno;
+	}
+
+	public void setEno(int eno) {
+		this.eno = eno;
+	}
 
 	public String getEname() {
 		return ename;
@@ -61,6 +70,14 @@ public class Employee {
 		this.salary = salary;
 		this.list = list;
 	}
+
+	public Employee(String ename, int salary, int eno) {
+		super();
+		this.ename = ename;
+		this.salary = salary;
+		this.eno = eno;
+	}
+	
 	
 	
 	
