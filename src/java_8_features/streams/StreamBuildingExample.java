@@ -2,6 +2,7 @@ package java_8_features.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -12,11 +13,31 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import JavaConceptExamples.Employee;
+import java_8_features.cust_consumer.ConsumerExample;
 
 public class StreamBuildingExample {
 	public static void main(String[] args) {
-		Stream<Integer> stream=Arrays.asList(1,2,3,4,5,6,7,8,9,10,1,2,3,4).stream();
-//		s.forEach(e->System.out.println(e));
+		List<Integer>list=Arrays.asList(1,2,3,4,5,6,7,8,9,10,1,2,3,4);
+		
+		Stream<Integer> stream=list.stream();
+		List<Integer>listOfSortedNo=stream.sorted().collect(Collectors.toList());
+		System.out.println("natural sorting of nos="+listOfSortedNo);
+
+		
+		Comparator<Integer> descendingComparator=(x,y)->-x.compareTo(y);
+		List<Integer>listOfSortedByComparator=list.stream().sorted(descendingComparator).collect(Collectors.toList());
+		System.out.println("descending sorting of nos by comparator="+listOfSortedByComparator);
+
+		
+		long countOfItems=list.stream().count();
+		System.out.println("countOfItems="+countOfItems);
+		
+		int minOfItems=list.stream().min(descendingComparator).get();
+		System.out.println("minOfItems="+minOfItems);
+		
+		ConsumerExample.Print_Integer_From_List_Consumer.accept(list);
+		
+		//		s.forEach(e->System.out.println(e));
 		
 		
 //		below stream is to get the max no from stream 

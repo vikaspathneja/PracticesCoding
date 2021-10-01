@@ -1,17 +1,19 @@
 package design_pattern.builder_design_pattern;
 
 public class MealBuilder {
-	static Meal getLiquidMeal() {
-		Item item = new Colddrink();
-		Meal m = new Meal();
-		m.addItem(item);
-		return m;
+	 Meal m = new Meal();
+	
+	MealBuilder getLiquidMeal(Item i) {
+		m.addItem(i);
+		return this;
 	}
 
-	static Meal getSolidMeal() {
-		Item item = new Burger();
-		Meal m = new Meal();
-		m.addItem(item);
+	MealBuilder getSolidMeal(Item i) {
+		m.addItem(i);
+		return this;
+	}
+	
+	Meal build() {
 		return m;
 	}
 

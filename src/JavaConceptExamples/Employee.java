@@ -9,8 +9,17 @@ public class Employee {
 	private int salary;
 	private List<Subject>list;
 	private int eno;
+	private String gender;
 	
 	
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	public int getEno() {
 		return eno;
@@ -77,6 +86,15 @@ public class Employee {
 		this.salary = salary;
 		this.eno = eno;
 	}
+
+	public Employee(String ename, int salary, int eno, String gender) {
+		super();
+		this.ename = ename;
+		this.salary = salary;
+		this.eno = eno;
+		this.gender = gender;
+	}
+	
 	
 	
 	

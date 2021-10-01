@@ -10,8 +10,15 @@ public class ConsumerExample {
 	/*
 	 * print items from list list
 	 */
-	public static Consumer<List<String>>c=x->{
+	public static Consumer<List<String>>Print_String_From_List_Consumer=x->{
 		for (String string : x) {
+			System.out.println(string);
+		}
+	};
+	
+	
+	public static Consumer<List<Integer>>Print_Integer_From_List_Consumer=x->{
+		for (Integer string : x) {
 			System.out.println(string);
 		}
 	};
@@ -24,7 +31,7 @@ public class ConsumerExample {
 		
 		List<String>list2=FunctionExample.notEmptyList.apply(list);
 	
-		c.accept(list2);
+		Print_String_From_List_Consumer.accept(list2);
 		
 	}
 }
