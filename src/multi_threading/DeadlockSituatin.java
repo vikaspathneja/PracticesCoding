@@ -74,6 +74,7 @@ public class DeadlockSituatin {
 		
 		for(int i=0;i<1000;i++) {
 			Thread t=new Thread(new T1(intersect));
+			t.setName("vikasThread"+i);
 			t.start();
 		}
 	}

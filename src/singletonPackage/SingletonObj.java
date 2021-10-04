@@ -1,21 +1,18 @@
 package singletonPackage;
 public enum SingletonObj{
 	INSTANCE;
-	private int value;
-	private String other;
-
-	int getValue(){
-		return value;
+	private int objintvalue;
+	public int getObjintvalue() {
+		
+		return objintvalue;
 	}
-	String getother(){
-		return other;
-	}
-	
-	public void setValue(int value) {
-		this.value = value;
+	public void setObjintvalue(int objintvalue) {
+		this.objintvalue = objintvalue;
 	}
 	
-	public void setOther(String other) {
-		this.other = other;
+	@Override
+	public String toString() {
+		return "Object into string:"+getObjintvalue()+"   value via instance "+INSTANCE.getObjintvalue();
 	}
 }
+

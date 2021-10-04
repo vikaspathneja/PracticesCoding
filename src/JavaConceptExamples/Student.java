@@ -78,7 +78,7 @@ public class Student implements Cloneable,Comparable<Student>{
 	}
 	
 	@Override
-	public Object clone() {
+	public Student clone() {
 	    Student stu = null;
 	    try {
 	        stu = (Student) super.clone();
