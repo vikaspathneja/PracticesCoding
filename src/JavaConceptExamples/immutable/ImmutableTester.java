@@ -2,8 +2,6 @@ package JavaConceptExamples.immutable;
 
 import java.util.Date;
 
-import org.junit.Test;
-
 public class ImmutableTester {
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException {
 		EmployeeImmutableClass emp=new EmployeeImmutableClass("vikas", 21, new Date());
