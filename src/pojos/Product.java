@@ -6,6 +6,14 @@ public class Product {
 	private String name;
 	private CustColor color;
 	private CustSize size;
+	private int length;
+	
+	public int getLength() {
+		return length;
+	}
+	public void setLength(int length) {
+		this.length = length;
+	}
 	public String getName() {
 		return name;
 	}
@@ -30,8 +38,18 @@ public class Product {
 		this.color = color;
 		this.size = size;
 	}
-
 	
+	
+	public Product(String name, CustColor color, int length) {
+		super();
+		this.name = name;
+		this.color = color;
+		this.length = length;
+	}
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", color=" + color + ", size=" + size + ", length=" + length + "]";
+	}
 	
 	
 	
