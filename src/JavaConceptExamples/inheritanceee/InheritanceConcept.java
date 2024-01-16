@@ -98,18 +98,6 @@ public class InheritanceConcept {
 		//		, compilation issue can be resolved by TypeCast With Child Object\
 //		but give runtime Error  ClassCastException  java.lang.ClassCastException
 		
-		
-		
-		
-		
-		
-		
-//		below line is giving Compile Time Error 
-//		Child c1=(Child) new Parent();
-//		c1.fun(c);
-//		Child c=new Child();
-//		Parent p2=new Child();
-//		c.fun(c);
 
 	}
 

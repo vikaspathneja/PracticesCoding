@@ -18,5 +18,8 @@ public class basicExamples {
 		//print no of characters in the course list
 		courseList.forEach(x->System.out.println(x.length()));
 		
+		
+		
+		
 	}
 }

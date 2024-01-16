@@ -3,7 +3,6 @@ public enum SingletonObj{
 	INSTANCE;
 	private int objintvalue;
 	public int getObjintvalue() {
-		
 		return objintvalue;
 	}
 	public void setObjintvalue(int objintvalue) {

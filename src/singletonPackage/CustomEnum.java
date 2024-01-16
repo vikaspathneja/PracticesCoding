@@ -1,8 +1,11 @@
 package singletonPackage;
-public enum CustomEnum{
-	instance;
-	SingletonObj obj=SingletonObj.INSTANCE;
 
+import java.io.Serializable;
+
+public enum CustomEnum implements Serializable,Cloneable {
+	instance;
+	private SingletonObj obj=SingletonObj.INSTANCE;
+	
 	public SingletonObj getObj() {
 		return obj;
 	}
@@ -10,5 +13,8 @@ public enum CustomEnum{
 	public void setObj(SingletonObj obj) {
 		this.obj = obj;
 	}
+
+	
+	
 
 }

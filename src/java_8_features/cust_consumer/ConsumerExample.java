@@ -28,9 +28,11 @@ public class ConsumerExample {
 
 		String[] str = { "vikas","sim","kiaan","mohit","vaibhav","asha","gulshan","kkkaaa","aajhhh","bbb","",null,"",null,"","kia"};
 		List<String>list=Arrays.asList(str);
-		
+		System.out.println("list consumed before null and empty removal");
+		Print_String_From_List_Consumer.accept(list);
+		System.out.println();
+		System.out.println("list consumed after null and empty removal");
 		List<String>list2=FunctionExample.notEmptyList.apply(list);
-	
 		Print_String_From_List_Consumer.accept(list2);
 		
 	}
