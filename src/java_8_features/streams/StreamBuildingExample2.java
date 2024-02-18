@@ -57,38 +57,40 @@ public class StreamBuildingExample2 {
 		List<Employee> listOfEmployees=Arrays.asList(
 				new Employee("vikas1", 10000,list1),
 				new Employee("vikas2", 20000,list2),
-				new Employee("vikas3", 30000,list3),
-				new Employee("vikas4", 40000,list4),
-				new Employee("vikas5", 50000,list5),
-				new Employee("mikas6", 60000,list1),
-				new Employee("mikas7", 70000,list2),
-				new Employee("mikas8", 80000,list3),
-				new Employee("mikas9", 90000,list4),
-				new Employee("mikas10", 100000,list5),
-				new Employee("mikas11", 110000,list1),
-				new Employee("mikas12", 120000,list2)
-//				
+//				new Employee("vikas3", 30000,list3),
+//				new Employee("vikas4", 40000,list4),
+				new Employee("vikas5", 50000,list5)
+//				new Employee("mikas6", 60000,list1),
+//				new Employee("mikas7", 70000,list2),
+//				new Employee("mikas8", 80000,list3),
+//				new Employee("mikas9", 90000,list4),
+//				new Employee("mikas10", 100000,list5),
+//				new Employee("mikas11", 110000,list1),
+//				new Employee("mikas12", 120000,list2)
 				);
 					Comparator<Employee> averageMarkComparator = (firstStudent, secondStudent) -> {
 					return -Double.compare(getAverage(firstStudent), getAverage(secondStudent));
 					};
 			
-				List<Employee>sortedListOfEmployessWithAvgOfMarksDesc=listOfEmployees.stream().filter(x->x.getEname().startsWith("v"))
-				.sorted(averageMarkComparator).collect(Collectors.toList()).subList(0, 1);
+				List<Employee>sortedListOfEmployessWithAvgOfMarksDesc=listOfEmployees.stream()
+				.sorted(averageMarkComparator).collect(Collectors.toList()).subList(0, 3);
 				System.out.println("sortedListOfEmployessWithAvgOfMarksDesc:"+sortedListOfEmployessWithAvgOfMarksDesc);
 				
 				
 				
 				
-				List<Employee>sortedlist2=listOfEmployees.stream().filter(x->x.getEname().startsWith("v"))
-						.collect(
-								Collectors.toMap(
-										x->x, 
-										x->x.getList().stream().mapToInt(y->y.getScore()).average().orElse(0)
-										)
-								).entrySet().stream().sorted(Map.Entry.comparingByValue()).map(z->z.getKey()).collect(Collectors.toList());
-				
-				System.out.println("sortedlist2:"+sortedlist2);
+//				List<Employee>sortedlist2=listOfEmployees.stream().filter(x->x.getEname().startsWith("v"))
+//						.collect(
+//								Collectors.toMap(
+//										x->x,
+//										x->x.getList().stream().mapToInt(y->y.getScore()).average().orElse(0)
+//										)
+//								).entrySet().stream().sorted(Map.Entry.comparingByValue()).map(z->z.getKey()).collect(Collectors.toList());
+//
+//				System.out.println("sortedlist2:"+sortedlist2);
+
+
+
 //				.sor(
 //						
 //						x->

@@ -2,6 +2,7 @@ package java_8_features.streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class basicExamples {
 	public static void main(String[] args) {

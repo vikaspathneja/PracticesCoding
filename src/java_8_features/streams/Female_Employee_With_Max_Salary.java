@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 import JavaConceptExamples.Employee;
-import JavaConceptExamples.Student;
 
-public class GetHighestPaidFemaleEmployee {
+public class Female_Employee_With_Max_Salary {
 	public static Predicate<Employee>isEmployeeIsGirl=x->x.getGender().equalsIgnoreCase("F");
 	public static Comparator<Employee> compareEmployeeBySalary=(x,y)->{
 		return Integer.compare(x.getSalary(), y.getSalary());
@@ -28,7 +27,14 @@ public class GetHighestPaidFemaleEmployee {
 		emplList.add(new Employee("j", 90000, 0, "F"));
 		emplList.add(new Employee("k", 100000, 0, "M"));
 		emplList.add(new Employee("l", 11110000, 0, "F"));
-		
+
+
+		Comparator<Employee> employeeComparator = Comparator.comparingInt(Employee::getSalary);
+		List<Employee> highestPaidFemaleemp=emplList.stream().filter(x -> x.getGender().equals("F")).sorted(Comparator.comparingInt(Employee::getSalary)).collect(Collectors.toList());
+		System.out.println("highestPaidFemaleemp="+highestPaidFemaleemp);
+
+
+
 		
 		Employee eee=emplList.stream().filter(isEmployeeIsGirl).max(compareEmployeeBySalary).get();	
 		System.out.println(eee);

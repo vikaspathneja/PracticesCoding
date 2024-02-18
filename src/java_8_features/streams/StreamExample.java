@@ -75,6 +75,7 @@ public class StreamExample {
 
 		// sort the string list based on the string length
 		strings.stream().sorted((s1, s2) -> s2.length() - s1.length()).forEach(System.out::println);
+		System.out.println("sort string based on its length");
 		strings.stream().sorted(Comparator.comparing(String::length)).forEach(System.out::println);
 
 		// sum of nos

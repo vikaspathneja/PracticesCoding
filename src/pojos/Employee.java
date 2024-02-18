@@ -81,11 +81,10 @@ public class Employee {
 				new Employee("Sham", 40, "C","IT"),
 				new Employee("Ganesh", 100, "Z","IT"),
 				new Employee("Ram", 20, "B","FINANCE"),
-				new Employee("Lalit", 50, "B","FINANCE"),				
+				new Employee("Lalit", 500, "B","FINANCE"),
 				new Employee("Mohit", 30, "A","OPS"),
 				new Employee("Saini", 60, "C","OPS")
 				);
 	}
-	
-	
+
 }

@@ -17,6 +17,9 @@ import java_8_features.cust_consumer.ConsumerExample;
 
 public class StreamBuildingExample {
 	public static void main(String[] args) {
+		String asfd="asdfads";
+		asfd.chars().mapToObj(ch->(char)ch).forEach(System.out::println);
+
 		List<Integer>list=Arrays.asList(1,2,3,4,5,6,7,8,9,10,1,2,3,4);
 		
 		Stream<Integer> stream=list.stream();
@@ -78,7 +81,6 @@ public class StreamBuildingExample {
 //		System.out.println(l);
 
 		
-
 
 		List<Employee> listOfEmployees=Arrays.asList(
 				new Employee("vikas", 10000),

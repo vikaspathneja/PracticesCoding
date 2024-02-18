@@ -18,20 +18,20 @@ public class LinkListBasicExample {
 
 	public static void main(String[] args) {
 		LLNode head = null;
-//		head = insertAtBegging(4, head);
-//		head = insertAtBegging(3, head);
-//		head = insertAtBegging(2, head);
-//		head = insertAtBegging(1, head);
+		head = insertAtBegging(4, head);
+		head = insertAtBegging(3, head);
+		head = insertAtBegging(2, head);
+		head = insertAtBegging(1, head);
 //		head = insertAtLast(5, head);				
 //		head = insertAtLast(6, head);
 //		head = insertAtLast(7, head);
-		head = insertAtLast(8, head);
-		head = insertAtLast(9, head);
-		head = insertAtLast(10, head);
-		head = insertAtLast(11, head);
-		System.out.println("-----printll-----");
-		printLL(head);
-		System.out.println("---before circurlar---");
+//		head = insertAtLast(8, head);
+//		head = insertAtLast(9, head);
+//		head = insertAtLast(10, head);
+//		head = insertAtLast(11, head);
+//		System.out.println("-----printll-----");
+//		printLL(head);
+//		System.out.println("---before circurlar---");
 		
 //		head=makeCircular(head);
 		
@@ -48,16 +48,29 @@ public class LinkListBasicExample {
 //		System.out.println();
 //		int element=findMiddleElementOfBySize(head);
 //		int element=findMiddleElement(head);
-		boolean iscircular=isLLCircular(head);
-		System.out.println("iscircular link list:"+iscircular);
+//		boolean iscircular=isLLCircular(head);
+//		System.out.println("iscircular link list:"+iscircular);
 //		System.out.println("circularLLSize="+circularLLSize);
 		
-		head=exchangeFirstLastElement(head);
-		System.out.println("----after exchange element of circular link list only--");
-		printLL(head);
+//		head=exchangeFirstLastElement(head);
+//		System.out.println("----after exchange element of circular link list only--");
+//		printLL(head);
 //		System.out.println(element);
-		
-		
+		printLL(head);
+		LLNode newhead= reverseList(head);
+		printLL(newhead);
+	}
+
+	public static LLNode reverseList(LLNode temp) {
+		LLNode head=temp;
+		if(head==null || head.next==null){
+			return head;
+		}
+		LLNode node=reverseList(head.next);
+//		System.out.println("q val="+q.data);
+		head.next.next=head;
+		head.next=null;
+		return node;
 	}
 
 	private static LLNode makeCircular(LLNode head) {

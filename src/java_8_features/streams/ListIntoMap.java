@@ -3,6 +3,7 @@ package java_8_features.streams;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ListIntoMap {
@@ -27,9 +28,15 @@ public class ListIntoMap {
 		mlist.add("cc");
 		mlist.add("aa");
 		mlist.add("ccc");
-		
 
-		
+		Map<String, Integer> newmap=
+				mlist
+						.stream()
+						.collect(
+								Collectors.toMap(
+										Function.identity(),
+										item->1,Integer::sum));
+
 		Map<String, Integer> map = mlist.stream()
                 .collect(Collectors.toMap(
                         String::toString,
