@@ -2,6 +2,7 @@ package pojos;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class Employee {
@@ -12,6 +13,15 @@ public class Employee {
 	private String department;
 	private String gender;
 	private int age;
+	private List<Subject>subjects;
+
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
+	}
 
 	public int getAge() {
 		return age;
@@ -87,6 +97,12 @@ public class Employee {
 				'}';
 	}
 
+	public Employee(String name, int id, int age) {
+		this.name = name;
+		this.id = id;
+		this.age = age;
+	}
+
 	public Employee(String name, int salary) {
 		this.name = name;
 		this.salary = salary;
@@ -106,8 +122,18 @@ public class Employee {
 		this.grade = grade;
 
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object o) {
+		Employee employee = (Employee) o;
+		return id == employee.id;
+	}
+
+	@Override
+	public int hashCode() {
+		return 2;
+	}
+
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
